@@ -23,6 +23,9 @@ public class SessionServlet extends HttpServlet {
         //get current session object or create new if non is existing
         HttpSession session = request.getSession();
 
+        // uncomment below line if you want to time limit your session (time in sec)
+        // session.setMaxInactiveInterval(30);
+
         // creating user session request parameters
         User user = (User) session.getAttribute("user"); // take values from parameter with key "user"
         if (user == null) {
